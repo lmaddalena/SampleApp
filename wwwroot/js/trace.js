@@ -14,6 +14,10 @@ var Trace = {
 
     init : function() {
 
+        $(window).bind('beforeunload', function(e) {
+            return "abbandonare!!";
+        });
+
         // ajax setup
         jQuery.ajaxSetup({
             timeout: 20000,
