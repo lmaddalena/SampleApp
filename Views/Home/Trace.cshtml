@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Trace";
+}
+<div class="ui container">
+    <h2>@ViewData["Title"]</h2>
+    <h3>@ViewData["Message"]</h3>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="ui container">
+
+    <button class="ui basic button" id="btn-single">
+        <i class="icon send outline"></i>
+        Single Test
+    </button>
+
+    <button class="ui basic button" id="btn-massive">
+        <i class="icon send"></i>
+        Massive Test
+    </button>
+
+</div>
+
+<p>&nbsp;</p>
+
+<div class="ui label gray">
+  <i class="send icon"></i>Sent:
+  <div class="detail" id="lbl-sent">0</div>
+</div>
+
+<div class="ui label green">
+  <i class="send icon"></i>Success:
+  <div class="detail" id="lbl-success">0</div>
+</div>
+
+<div class="ui label red">
+  <i class="send icon"></i>Errors:
+  <div class="detail" id="lbl-errors">0</div>
+</div>
+
+<div class="ui label blue">
+  <i class="send icon"></i>Completed:
+  <div class="detail" id="lbl-completed">0</div>
+</div>
+
+
+
+@section scripts
+{
+    <script src="~/js/trace.js"></script>
+}
