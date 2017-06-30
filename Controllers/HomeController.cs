@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SampleApp.Controllers
@@ -31,6 +32,14 @@ namespace SampleApp.Controllers
         {
             ViewData["Message"] = "Trace test.";
 
+            // read a cookie
+            string mykey = Request.Cookies["mykey"];
+
+            // write a cookie
+            CookieOptions options = new CookieOptions();
+            options.Expires = DateTime.Now.AddDays(1);
+            Response.Cookies.Append("mykey", "hello", options);
+            
             return View();
         }
 
